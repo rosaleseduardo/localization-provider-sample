@@ -1,5 +1,4 @@
 import type { Locale } from '@interfaces';
-
 /**
  * Formats a phone number based on locale, adding country codes and parentheses where appropriate.
  *

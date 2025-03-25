@@ -1,0 +1,11 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "1. Bundling the package to test a feature",
+  "steps": [
+    {
+      "file": "package.json",
+      "description": "You must compile the SDK using this command.\n\n- The result of that process will generate a compressed file that, when decompressed, will have a directory named \"package\". You must rename it to \"localization-provider-sample\".\n- Copy that directory, go to the application where you want to test it, and paste it within frontend/node_modules.\n- You must stop the project and initialize it again for the changes to take effect.",
+      "line": 28
+    }
+  ]
+}
