@@ -31,7 +31,7 @@ import pluginJs from '@eslint/js';
  */
 export default [
   { files: ['**/*.{ts,tsx}'] },
-  { ignores: ['coverage', 'eslint.config.js'] },
+  { ignores: ['coverage', 'eslint.config.js', 'dist'] },
   { 
     languageOptions: {
       parser: parserTs,
