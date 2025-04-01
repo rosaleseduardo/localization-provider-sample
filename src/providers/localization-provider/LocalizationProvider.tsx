@@ -1,7 +1,7 @@
 import i18next from 'i18next';
 import { initReactI18next, useTranslation } from 'react-i18next';
 
-import { getTimeZoneInfo, langAsOptions, namespaceResources } from '@helpers';
+import { defaultResources, getTimeZoneInfo, langAsOptions } from '@helpers';
 import { useDefaultLocale, useLocalizedInfo, useSessionStorage } from '@hooks';
 import type { LanguageSettings, Locale, LocalizationProviderProps, SupportedLanguages } from '@interfaces';
 import * as supportedLocales from '@locales';
@@ -9,7 +9,7 @@ import * as utils from '@utils';
 
 import { LocalizationProviderContext } from './context';
 
-const LocalizationProvider: React.FC<LocalizationProviderProps> = ({ children }) => {
+const LocalizationProvider: React.FC<LocalizationProviderProps> = ({ children, resources }) => {
   const defaultLocale = useDefaultLocale();
   const [storedValue, setValue] = useSessionStorage({
     key: 'i18nLocale',
@@ -22,7 +22,7 @@ const LocalizationProvider: React.FC<LocalizationProviderProps> = ({ children })
 
   i18next.use(initReactI18next).init({
     lng: storedValue,
-    resources: namespaceResources,
+    resources: resources ?? defaultResources,
     /**
      * By default, i18next escapes these dynamic values to prevent XSS
      * (Cross-Site Scripting) attacks. This means special characters like \<,

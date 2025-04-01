@@ -1,0 +1,7 @@
+{
+    "helperTexts": {
+      "primary": "قم بتعديل src/App.tsx واحفظ لتجربة HMR",
+      "secondary": "انقر على شعارات Vite و React لمعرفة المزيد"
+    }
+}
+  

@@ -1,11 +1,11 @@
 import type { Resource } from 'i18next';
 
 import type { Locale } from '@interfaces';
+import * as supportedLanguages from '@locales';
 
-import * as supportedLanguages from '../../locales';
 import { availableLocales } from '../available-locales';
 
-const namespaceResources = availableLocales.reduce(
+const defaultResources = availableLocales.reduce(
   (acc, current) => {
     const { i18n } = supportedLanguages[current];
 
@@ -16,4 +16,4 @@ const namespaceResources = availableLocales.reduce(
   {} as Record<Locale, Resource>,
 );
 
-export default namespaceResources;
+export default defaultResources;

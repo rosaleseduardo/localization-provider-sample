@@ -1,16 +1,19 @@
 import type { LanguageSettings } from '@interfaces';
 
-const settings: LanguageSettings = {
+const settingsEsCo: LanguageSettings = {
   name: 'Español (Colombia)',
   locale: 'es_CO',
-  currency: 'COP',
+  currency: {
+    name: 'COP',
+    symbol: '$',
+  },
   textDirection: 'ltr',
   formats: {
-    dateTime: 'DD/MM/YYYY hh:mm a',
-    date: { short: 'dd/MM/yyyy', long: "d 'de' MMMM 'de' yyyy" },
-    time: 'hh:mm a',
-    hour: '12-hour',
+    dateTime: 'dd/MM/yyyy HH:mm',
+    date: { short: 'dd/MM/yyyy', long: 'd MMMM yyyy' },
+    time: 'HH:mm',
+    hour: '24-hour',
   },
 };
 
-export default settings;
+export default settingsEsCo;

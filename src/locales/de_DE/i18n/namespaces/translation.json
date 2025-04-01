@@ -1,0 +1,6 @@
+{
+  "helperTexts": {
+    "primary": "Bearbeiten Sie src/App.tsx und speichern Sie, um HMR zu testen.",
+    "secondary": "Klicken Sie auf die Logos von Vite und React für weitere Informationen."
+  }
+}

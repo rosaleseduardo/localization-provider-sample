@@ -1,11 +1,11 @@
 import type { LanguageSettings } from '@interfaces';
 
-const settingsFrFr: LanguageSettings = {
-  name: 'Français (France)',
-  locale: 'fr_FR',
+const settings: LanguageSettings = {
+  name: 'English (United Kingdom)',
+  locale: 'en_GB',
   currency: {
-    name: 'EUR',
-    symbol: '€',
+    name: 'GBP',
+    symbol: '£',
   },
   textDirection: 'ltr',
   formats: {
@@ -16,4 +16,4 @@ const settingsFrFr: LanguageSettings = {
   },
 };
 
-export default settingsFrFr;
+export default settings;

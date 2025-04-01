@@ -3,10 +3,12 @@ import type { Resource } from 'i18next';
 import type { LanguageSettings } from './LanguageSettings';
 import type { Locale } from './Locale';
 
-export interface i18nextConfig {
-  namespaces: {
-    translation: Resource;
-  };
+interface DEFAULT_NAMESPACE_CONFIG {
+  common: Resource;
+  translation: Resource;
+}
+export interface i18nextConfig<T = DEFAULT_NAMESPACE_CONFIG> {
+  namespaces: T;
 }
 
 export type SupportedLanguages = {

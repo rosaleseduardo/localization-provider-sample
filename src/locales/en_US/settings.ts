@@ -3,7 +3,10 @@ import type { LanguageSettings } from '@interfaces';
 const settings: LanguageSettings = {
   name: 'English (United States)',
   locale: 'en_US',
-  currency: 'USD',
+  currency: {
+    name: 'USD',
+    symbol: '$',
+  },
   textDirection: 'ltr',
   formats: {
     dateTime: 'MM/DD/YYYY hh:mm a',

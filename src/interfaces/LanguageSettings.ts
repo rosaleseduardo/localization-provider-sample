@@ -1,14 +1,14 @@
 import type { HourFormat } from './HourFormat';
 import type { Locale } from './Locale';
 
-export type Currencies = 'USD' | 'EUR' | 'COP';
-
 export type Directions = 'ltr' | 'rtl';
-
 export interface LanguageSettings {
   name: string;
   locale: Locale;
-  currency: Currencies;
+  currency: {
+    name: string;
+    symbol: string;
+  };
   textDirection: Directions;
   formats: {
     dateTime: string;
