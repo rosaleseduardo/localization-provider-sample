@@ -11,9 +11,10 @@ export interface i18nextConfig<T = DEFAULT_NAMESPACE_CONFIG> {
   namespaces: T;
 }
 
-export type SupportedLanguages = {
-  [K in Locale]: {
-    settings: LanguageSettings;
-    i18n: i18nextConfig;
-  };
+interface DEFAULT_SUPPORTED_LANGUAGES {
+  settings: LanguageSettings;
+  i18n: i18nextConfig;
+}
+export type SupportedLanguages<T = DEFAULT_SUPPORTED_LANGUAGES> = {
+  [K in Locale]: T;
 };
