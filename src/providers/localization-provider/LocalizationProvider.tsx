@@ -22,7 +22,7 @@ const LocalizationProvider: React.FC<LocalizationProviderProps> = ({ children, r
 
   i18next.use(initReactI18next).init({
     lng: storedValue,
-    resources: resources ?? defaultResources(),
+    resources: defaultResources(resources),
     /**
      * By default, i18next escapes these dynamic values to prevent XSS
      * (Cross-Site Scripting) attacks. This means special characters like \<,

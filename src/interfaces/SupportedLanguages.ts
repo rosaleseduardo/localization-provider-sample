@@ -3,18 +3,28 @@ import type { Resource } from 'i18next';
 import type { LanguageSettings } from './LanguageSettings';
 import type { Locale } from './Locale';
 
-interface DEFAULT_NAMESPACE_CONFIG {
+interface BASE_NAMESPACE_STRUCTURE {
   common: Resource;
   translation: Resource;
 }
-export interface i18nextConfig<T = DEFAULT_NAMESPACE_CONFIG> {
-  namespaces: T;
-}
 
-interface DEFAULT_SUPPORTED_LANGUAGES {
+interface DEFAULT_SUPPORTED_LANGUAGES_CONFIG {
   settings: LanguageSettings;
   i18n: i18nextConfig;
 }
-export type SupportedLanguages<T = DEFAULT_SUPPORTED_LANGUAGES> = {
+
+/**
+ * This approach allows defining additional properties per language while maintaining a default structure.
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export interface i18nextConfig<T extends Record<string, any> = BASE_NAMESPACE_STRUCTURE> {
+  namespaces: T;
+}
+
+/**
+ * This approach allows defining additional properties per language while maintaining a default configuration.
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type SupportedLanguages<T extends Record<string, any> = DEFAULT_SUPPORTED_LANGUAGES_CONFIG> = {
   [K in Locale]: T;
 };

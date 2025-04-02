@@ -1,6 +1,5 @@
-import type { Resource } from 'i18next';
-
+import type { SupportedLanguages } from '@interfaces';
 export interface LocalizationProviderProps {
   children: React.ReactElement;
-  resources?: Resource;
+  resources?: SupportedLanguages;
 }
