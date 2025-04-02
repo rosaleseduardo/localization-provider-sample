@@ -16,15 +16,13 @@ interface DEFAULT_SUPPORTED_LANGUAGES_CONFIG {
 /**
  * This approach allows defining additional properties per language while maintaining a default structure.
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export interface i18nextConfig<T extends Record<string, any> = BASE_NAMESPACE_STRUCTURE> {
-  namespaces: T;
+export interface i18nextConfig<T = BASE_NAMESPACE_STRUCTURE> {
+  namespaces: Partial<T>;
 }
 
 /**
  * This approach allows defining additional properties per language while maintaining a default configuration.
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type SupportedLanguages<T extends Record<string, any> = DEFAULT_SUPPORTED_LANGUAGES_CONFIG> = {
-  [K in Locale]: T;
+export type SupportedLanguages<T = DEFAULT_SUPPORTED_LANGUAGES_CONFIG> = {
+  [K in Locale]: Partial<T>;
 };

@@ -5,16 +5,16 @@ import * as supportedLanguages from '@locales';
 
 import { availableLocales } from '../available-locales';
 
-const defaultResources = (languages: SupportedLanguages = supportedLanguages) =>
+const buildResources = (languages: SupportedLanguages = supportedLanguages) =>
   availableLocales.reduce(
     (acc, current) => {
       const { i18n } = languages[current];
 
-      acc[current] = { ...i18n.namespaces };
+      acc[current] = { ...i18n!.namespaces };
 
       return acc;
     },
     {} as Record<Locale, ResourceLanguage>,
   );
 
-export default defaultResources;
+export default buildResources;
