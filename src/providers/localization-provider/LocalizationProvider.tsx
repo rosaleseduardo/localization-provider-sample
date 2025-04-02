@@ -16,7 +16,7 @@ const LocalizationProvider: React.FC<LocalizationProviderProps> = ({ children, r
     defaultValue: defaultLocale,
   });
   const supportedLanguages: SupportedLanguages = supportedLocales;
-  const currentLangSettings: LanguageSettings = supportedLanguages[storedValue].settings!;
+  const currentLangSettings: LanguageSettings = supportedLanguages[storedValue].settings as LanguageSettings;
   const locales = Object.keys(supportedLanguages) as Locale[];
   const defaultLangCount = locales.length;
 

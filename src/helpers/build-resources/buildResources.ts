@@ -1,4 +1,4 @@
-import type { ResourceLanguage } from 'i18next';
+import type { Resource, ResourceLanguage } from 'i18next';
 
 import type { Locale, SupportedLanguages } from '@interfaces';
 import * as supportedLanguages from '@locales';
@@ -10,7 +10,7 @@ const buildResources = (languages: SupportedLanguages = supportedLanguages) =>
     (acc, current) => {
       const { i18n } = languages[current];
 
-      acc[current] = { ...i18n!.namespaces };
+      acc[current] = { ...(i18n.namespaces as Resource) };
 
       return acc;
     },
