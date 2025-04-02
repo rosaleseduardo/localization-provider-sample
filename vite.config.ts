@@ -80,7 +80,7 @@ export default defineConfig({
     // Output directory for the build
     outDir: 'dist',
     // Clears the output directory before building
-    emptyOutDir: true,
+    emptyOutDir: false,
   },
   esbuild: {
     supported: {
