@@ -15,15 +15,17 @@ import type { DateRangeConfig } from '@interfaces';
 const isValidRange = (props?: Partial<DateRangeConfig>): boolean => {
   const timeZoneInfo = getTimeZoneInfo();
 
-  const today = DateTime.now().startOf('day');
+  const today = DateTime.now()
+    .setZone(props?.timeZone ?? timeZoneInfo.zoneName)
+    .startOf('day');
 
   const start = props?.startDate
-    ? DateTime.fromISO(props.startDate)
+    ? DateTime.fromISO(props?.startDate, { zone: 'utc' })
         .setZone(props?.timeZone ?? timeZoneInfo.zoneName)
         .startOf('day')
     : null;
   const end = props?.endDate
-    ? DateTime.fromISO(props.endDate)
+    ? DateTime.fromISO(props?.endDate, { zone: 'utc' })
         .setZone(props?.timeZone ?? timeZoneInfo.zoneName)
         .endOf('day')
     : null;
