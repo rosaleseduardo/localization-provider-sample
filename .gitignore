@@ -12,6 +12,7 @@ node_modules
 
 # Build Related
 dist
+build
 dist-ssr
 
 *.local

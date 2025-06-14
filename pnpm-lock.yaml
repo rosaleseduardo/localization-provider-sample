@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  localization-provider-sample: link:../../Library/pnpm/global/5/node_modules/localization-provider-sample
-
 importers:
 
   .:
@@ -23,12 +20,6 @@ importers:
       i18next:
         specifier: 24.2.3
         version: 24.2.3(typescript@5.8.2)
-      list:
-        specifier: link:../../Library/pnpm/global/5/node_modules/list
-        version: link:../../Library/pnpm/global/5/node_modules/list
-      localization-provider-sample:
-        specifier: link:../../Library/pnpm/global/5/node_modules/localization-provider-sample
-        version: link:../../Library/pnpm/global/5/node_modules/localization-provider-sample
       luxon:
         specifier: 3.5.0
         version: 3.5.0
